@@ -1,6 +1,7 @@
 # This code scraps through the advertisement picture from a newspaper and extracts a text separately ad by ad.
 
 # Imports the Google Cloud client library
+import os
 import statistics
 
 from google.cloud import vision
@@ -104,6 +105,7 @@ def get_lines(path, words):
     """
     image_with_no_words = get_image_with_no_words(path, words)
     all_lines_y = get_open_cv_lines(image_with_no_words)
+    os.remove(image_with_no_words)
     return group_lines_y(all_lines_y)
 
 
@@ -161,7 +163,7 @@ def get_words_lists(all_paragraphs):
 
 
 if __name__ == '__main__':
-    image_path = " "
+    image_path = "norvegian_houses.png"
     doc_words = get_document_words(image_path)
     grouped_lines_y = get_lines(image_path, doc_words)
     paragraphs_by_lines = get_paragraphs_divided_by_lines(doc_words, grouped_lines_y)
@@ -171,5 +173,5 @@ if __name__ == '__main__':
         print("--------------------------------\n")
     words_lists = get_words_lists(paragraphs_by_lines)
     df = pd.DataFrame.from_records(words_lists)
-    df.to_excel(" ")
+    df.to_excel("houses.xlsx")
     print(df)
