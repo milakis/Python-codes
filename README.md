@@ -6,4 +6,4 @@ This folder contains:
 
 2. Designed problems sets for the course "Microeconometrics"
 
-3. Folder with wokring codes
+3. Folder with working codes
