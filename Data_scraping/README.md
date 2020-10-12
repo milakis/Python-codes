@@ -1,6 +1,3 @@
-# Python-codes
-Codes for work
-
 ###Setup:
 
 In terminal, go to the source of the project
