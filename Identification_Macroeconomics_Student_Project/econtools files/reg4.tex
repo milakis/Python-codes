@@ -1,0 +1,71 @@
+\documentclass{beamer}
+\setbeamersize{text margin left=5mm,text margin right=5mm} 
+
+\begin{document}
+
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\scalebox{0.6}{%
+\begin{tabular}{l*{8}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{}&\multicolumn{1}{c}{Strictly}&\multicolumn{1}{c}{Nondurable}&\multicolumn{1}{c}{All CE goods}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{Strictly}&\multicolumn{1}{c}{Nondurable}&\multicolumn{1}{c}{All CE goods}\\
+            &\multicolumn{1}{c}{Food}&\multicolumn{1}{c}{nondurables}&\multicolumn{1}{c}{spending}&\multicolumn{1}{c}{and services}&\multicolumn{1}{c}{Food}&\multicolumn{1}{c}{nondurables}&\multicolumn{1}{c}{spending}&\multicolumn{1}{c}{and services}\\
+\hline
+ESP   & 0.016      & 0.079*     & 0.121**    & 0.516***  \\ 
+      & (0.027)    & (0.046)    & (0.055)    & (0.179)    &            &            &            &             \\
+I(ESP)  &            &            &            &             & 10.9     & 74.7     & 121.5*   & 494.5**   \\ 
+       &            &            &            &             & (31.6)   & (56.6)   & (67.1)   & (207.2)   \\      
+\hline\hline
+\multicolumn{9}{c}{\small Notes: 1. \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} 2. Clustered standard errors are shown in brackets 3. Number of observations: 17 472}
+\end{tabular}}
+\end{table}
+
+
+
+\begin{frame}{}
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\scalebox{0.6}{%
+\begin{tabular}{l*{8}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{}&\multicolumn{1}{c}{Strictly}&\multicolumn{1}{c}{Nondurable}&\multicolumn{1}{c}{All CE goods}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{Strictly}&\multicolumn{1}{c}{Nondurable}&\multicolumn{1}{c}{All CE goods}\\
+            &\multicolumn{1}{c}{Food}&\multicolumn{1}{c}{nondurables}&\multicolumn{1}{c}{spending}&\multicolumn{1}{c}{and services}&\multicolumn{1}{c}{Food}&\multicolumn{1}{c}{nondurables}&\multicolumn{1}{c}{spending}&\multicolumn{1}{c}{and services}\\
+\hline
+ESP   & 0.060*     & 0.188***   & 0.214***   & 0.590***   &            &            &            &             \\ 
+      & (0.032)    & (0.058)    & (0.070)    & (0.217)    &            &            &            &             \\
+\hline
+I(ESP)  &            &            &            &             & 79.9*    & 246.6*** & 290.3*** & 859.1***  \\ 
+       &            &            &            &             & (47.3)   & (86.1)   & (105.5)  & (321.6)   \\      
+\hline\hline
+\multicolumn{9}{c}{\small Notes: 1. \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} 2. Clustered standard errors are shown in brackets 3. Number of observations: 10 487}
+\end{tabular}}
+\end{table}    
+\end{frame}
+
+\begin{frame}{}
+    
+
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\scalebox{0.6}{%
+\begin{tabular}{l*{8}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{}&\multicolumn{1}{c}{Strictly}&\multicolumn{1}{c}{Nondurable}&\multicolumn{1}{c}{All CE goods}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{Strictly}&\multicolumn{1}{c}{Nondurable}&\multicolumn{1}{c}{All CE goods}\\
+            &\multicolumn{1}{c}{Food}&\multicolumn{1}{c}{nondurables}&\multicolumn{1}{c}{spending}&\multicolumn{1}{c}{and services}&\multicolumn{1}{c}{Food}&\multicolumn{1}{c}{nondurables}&\multicolumn{1}{c}{spending}&\multicolumn{1}{c}{and services}\\
+\hline
+$ESP_{t+1}$   & 0.052*     & 0.186***   & 0.201***   & 0.517**     \\ 
+             & (0.031)    & (0.055)    & (0.067)    & (0.211)        \\
+$ESP_{t}$ & -0.029     & -0.009     & -0.054     & -0.288     \\ 
+            & (0.039)    & (0.068)    & (0.080)    & (0.214)   \\ 
+\hline
+$I(ESP_{t+1})$  &            &            &            &             & 63.3     & 213.4*** & 247.5**  & 737.1**   \\ 
+       &            &            &            &             & (45.9)   & (82.4)   & (102.6)  & (332.6)   \\
+$I(ESP_{t})$  &            &            &            &             & -33.8    & -67.6    & -86.9    & -248.0    \\ 
+       &            &            &            &             & (43.9)   & (84.4)   & (102.8)  & (301.8)   \\
+\hline\hline
+\multicolumn{9}{c}{\small Notes: 1. \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} 2. Clustered standard errors are shown in brackets 3. Number of observations: 10 487}
+\end{tabular}}
+\end{table}
+\end{frame}
+
+\end{document}

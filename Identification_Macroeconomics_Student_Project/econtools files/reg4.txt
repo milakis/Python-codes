@@ -1,0 +1,99 @@
+import econtools.metrics as mt
+import econtools
+
+from econtools import read, outreg, table_statrow, write_notes
+
+Section 4
+
+df = pd.read_stata('data, R and html files/3section1.dta')
+
+#regression 4.1
+
+#dollar change in spending by amount of payment
+#regression of food expenditures
+aregf = mt.reg(df, 'dcf', ['esp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of strictly nondurables expenditures
+aregs = mt.reg(df, 'dcs', ['esp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of nondurables expenditures
+aregn = mt.reg(df, 'dcn', ['esp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of total expenditures
+aregt = mt.reg(df, 'dctsmed', ['esp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+
+#dollar change in spending by indicator variable
+#regression of food expenditures
+iregf = mt.reg(df, 'dcf', ['iesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of strictly nondurables expenditures
+iregs = mt.reg(df, 'dcs', ['iesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of nondurables expenditures
+iregn = mt.reg(df, 'dcn', ['iesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of total expenditures
+iregt = mt.reg(df, 'dctsmed', ['iesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+
+#creating the table
+regs = (aregf, aregs, aregn, aregt, iregf, iregs, iregn, iregt)
+table_string = outreg(regs, ['esp', 'iesp'], digits = 3, stars = True)
+results_path = 'reg1.tex'
+with open(results_path, 'w') as f:
+    f.write(table_string)
+#the final table is constructed in LaTeX
+
+#regression 4.2
+
+#droping the observations
+dfd = df.loc[(df['baselines3'] == 1)]
+
+#dollar change in spending by amount of payment with droped observations
+#regression of food expenditures
+aregf = mt.reg(dfd, 'dcf', ['esp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of strictly nondurables expenditures
+aregs = mt.reg(dfd, 'dcs', ['esp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of nondurables expenditures
+aregn = mt.reg(dfd, 'dcn', ['esp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of total expenditures
+aregt = mt.reg(dfd, 'dctsmed', ['esp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+
+#dollar change in spending by indicator variable with droped observations
+#regression of food expenditures
+iregf = mt.reg(dfd, 'dcf', ['iesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of strictly nondurables expenditures
+iregs = mt.reg(dfd, 'dcs', ['iesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of nondurables expenditures
+iregn = mt.reg(dfd, 'dcn', ['iesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of total expenditures
+iregt = mt.reg(dfd, 'dctsmed', ['iesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+
+#creating the table
+regs = (aregf, aregs, aregn, aregt, iregf, iregs, iregn, iregt)
+table_string = outreg(regs, ['esp', 'iesp'], digits = 3, stars = True)
+results_path = 'reg5.tex'
+with open(results_path, 'w') as f:
+    f.write(table_string)
+#the final table is constructed in LaTeX
+
+#regression 4.3
+
+#dollar change in spending by amount of payment with lag variable
+#regression of food expenditures
+aregf = mt.reg(dfd, 'dcf', ['esp', 'lesp','age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of strictly nondurables expenditures
+aregs = mt.reg(dfd, 'dcs', ['esp', 'lesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of nondurables expenditures
+aregn = mt.reg(dfd, 'dcn', ['esp', 'lesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of total expenditures
+aregt = mt.reg(dfd, 'dctsmed', ['esp', 'lesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#dollar change in spending by indicator variable with lag variable
+#regression of food expenditures
+iregf = mt.reg(dfd, 'dcf', ['iesp', 'liesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of strictly nondurables expenditures
+iregs = mt.reg(dfd, 'dcs', ['iesp', 'liesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of nondurables expenditures
+iregn = mt.reg(dfd, 'dcn', ['iesp', 'liesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#regression of total expenditures
+iregt = mt.reg(dfd, 'dctsmed', ['iesp', 'liesp', 'age', 'dnad', 'dnkd'], fe_name='yymm', cluster='newid')
+#creating the table
+regs = (aregf, aregs, aregn, aregt, iregf, iregs, iregn, iregt)
+table_string = outreg(regs, ['esp', 'lesp', 'iesp', 'liesp'], digits = 3, stars = True)
+results_path = 'reg6.tex'
+with open(results_path, 'w') as f:
+    f.write(table_string)
+#the final table is constructed in LaTeX

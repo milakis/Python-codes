@@ -1,0 +1,10 @@
+name: student_project
+
+dependencies:
+- numpy
+- pandas
+- matplotlib
+- rpy2
+- jupyterlab
+- tzlocal
+- simplegeneric
