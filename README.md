@@ -1,28 +1,9 @@
 # Python-codes
-Codes for work
 
-###Setup:
+This folder contains:
 
-In terminal, go to the source of the project
-```
-cd /path/to/project/Python-codes
-```
+1. Student Project "identification in Macroeconomics"
 
-Create virtual environment
-```
-python3 -m venv venv
-source venv/bin/activate
-```
+2. Designed problems sets for the course "Microeconometrics"
 
-Install dependencies
-```
-pip install --upgrade pip
-pip install google-cloud-vision opencv-python pillow pandas openpyxl
-```
-
-Get your Google Cloud API credentials: https://cloud.google.com/vision/docs/libraries#setting_up_authentication
-
-Set the environment variable
-```
-export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
-```
+3. Folder with wokring codes
